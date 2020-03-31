@@ -8,6 +8,7 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
+const router = express.Router()
 
 //set up handlebars
 const handlebars = require('express-handlebars')
@@ -19,10 +20,13 @@ app.set('port', process.env.PORT || 3000)
 
 app.use(express.static(__dirname+'/public'))
 
-//routing
+//front-end routing
 app.get('/', home)
-
 app.get('/regisUser', regisUser)
 
+//back-end routing
+app.use('/api',router)
+router.post('/regisUser',)
 
-app.listen(app.get('port'), ()=> console.log('Running on port '+ app.get('port')))
+
+app.listen(app.get('port'), () => console.log('Running on port '+ app.get('port')))
