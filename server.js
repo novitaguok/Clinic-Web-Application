@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const home = require('./routing/home')
+const regisUser = require('./routing/regisUser')
 
 const app = express()
 app.use(cors())
@@ -21,12 +22,7 @@ app.use(express.static(__dirname+'/public'))
 //routing
 app.get('/', home)
 
-app.get('/regisUser', (req,res,next)=>{
-  res.render('regisUser', {
-    layout: 'main',
-    nama: "Alif"
-  })
-})
+app.get('/regisUser', regisUser)
 
 
 app.listen(app.get('port'), ()=> console.log('Running on port '+ app.get('port')))
