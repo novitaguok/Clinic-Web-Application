@@ -35,4 +35,9 @@
 <script>
   const home = document.getElementById('registrasi')
   home.classList.add("active");
+
+  $('button').click(()=>{
+    $.get("/home", function(data, status){
+    });
+  });
 </script>
