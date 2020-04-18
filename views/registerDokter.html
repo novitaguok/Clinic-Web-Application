@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Klinik Tongfang</title>
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    /> -->
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="plugins/slick/slick.css" />
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css" />
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css" />
+
+    <!-- Stylesheets -->
+    <link href="style.css" rel="stylesheet" />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <a class="navbar-brand" href="#">Klinik Tongfang</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+            <a class="nav-item nav-link" href="#">About</a>
+            <a class="nav-item nav-link" href="#">Appointment</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Form Register -->
+      <center>
+        <h1 style="margin-top: 48px;">Register</h1>
+      </center>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <form class="col-lg-4 offset-md-4" style="margin-top: 24px;">
+              <div class="form-group row" style="margin-bottom: 24px;">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Nama Lengkap"
+                />
+              </div>
+              <div class="form-group row" style="margin-bottom: 24px;">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail3"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="form-group row" style="margin-bottom: 24px;">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword3"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="form-group row" style="margin-bottom: 24px;">
+                <input id="datepicker" placeholder="Tanggal Lahir" />
+                <script>
+                  $('#datepicker').datepicker({
+                    uiLibrary: 'bootstrap4',
+                  });
+                </script>
+              </div>
+              <div class="form-group row">
+                <div class="switch-field">
+                  <input
+                    type="radio"
+                    id="radio-one"
+                    name="switch-one"
+                    value="yes"
+                    checked
+                  />
+                  <label for="radio-one">Laki-laki</label>
+                  <input
+                    type="radio"
+                    id="radio-two"
+                    name="switch-one"
+                    value="no"
+                  />
+                  <label for="radio-two">Perempuan</label>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="btn-group btn-block">
+                  <button
+                    type="button"
+                    class="btn btn-outline-success dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    style="outline: none;"
+                  >
+                    Bidang
+                  </button>
+                  <div
+                    class="dropdown-menu btn-block"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" href="#">Umum</a>
+                    <a class="dropdown-item" href="#">Gigi</a>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row" style="margin-bottom: 32px;">
+                <div class="btn-group btn-block">
+                  <button
+                    type="button"
+                    class="btn btn-outline-success dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Pengalaman
+                  </button>
+                  <div
+                    class="dropdown-menu btn-block"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" href="#">1 - 5 Tahun</a>
+                    <a class="dropdown-item" href="#">6 - 10 Tahun</a>
+                    <a class="dropdown-item" href="#">>10 Tahun</a>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <center>
+                  <p>
+                    Note: Pastikan email Anda benar untuk mendapatkan informasi
+                    selanjutnya.
+                  </p>
+                </center>
+              </div>
+              <div class="form-group row">
+                <button type="submit" class="btn btn-success btn-block">
+                  Daftar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!--footer-main-->
+      <footer class="footer-main">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="about-widget">
+                  <h1>
+                    Klinik Tongfang
+                  </h1>
+                  <ul class="info" style="list-style: none;">
+                    <li class="item">
+                      <i class="fa fa-map-marker"></i>
+                      <p>Bandung</p>
+                    </li>
+                    <li class="item">
+                      <a href="#">
+                        <i class="fa fa-envelope-o"></i>
+                        <p>tongfang@gmail.com</p>
+                      </a>
+                    </li>
+                    <li class="item">
+                      <i class="fa fa-phone"></i>
+                      <p>081234567890</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h6>Pelayanan</h6>
+                <ul class="pelayanan" style="list-style: none; color: white;">
+                  <li>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="#"> Klinik Umum</a>
+                  </li>
+                  <li>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="#">Klinik Gigi</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--End footer-main-->
+    </div>
+    <!--End pagewrapper-->
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
+      <span class="icon fa fa-angle-up"></span>
+    </div>
+
+    <script src="plugins/jquery.js"></script>
+    <script src="plugins/bootstrap.min.js"></script>
+    <script src="plugins/bootstrap-select.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <!-- FancyBox -->
+    <script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="plugins/google-map/gmap.js"></script>
+
+    <script src="plugins/validate.js"></script>
+    <script src="plugins/wow.js"></script>
+    <script src="plugins/jquery-ui.js"></script>
+    <script src="plugins/timePicker.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
