@@ -7,6 +7,7 @@ async function regisDokter(req,res) {
   const date = payload.tanggal_lahir.split('/')
   // const hash = encryptPass(payload.password)
   const hash = payload.password
+  
   const data = {
     nama : payload.nama,
     gender : payload.gender,
