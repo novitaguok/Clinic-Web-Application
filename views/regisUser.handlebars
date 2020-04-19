@@ -1,6 +1,6 @@
 
 <div class="container" style="margin-top: 50px;">
-  <form action="/api/regisUser" method="POST" name="form-register" style="padding: 30px;">
+  <form action="/login" method="post" name="form-register" style="padding: 30px;">
     <div class="form-group">
       <label for="namaLengkap">Nama Lengkap</label>
       <input type="text" class="form-control" id="namaLengkap" name="namaLengkap" required>
@@ -32,12 +32,14 @@
   </form>
 </div>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-  const home = document.getElementById('registrasi')
-  home.classList.add("active");
+  const home = document.getElementById('registrasi');
+  home.classList.add("active"); 
+  if (dokter) {
+  }
+  if (parsien){
 
-  $('button').click(()=>{
-    $.get("/home", function(data, status){
-    });
-  });
+  }
+  
 </script>

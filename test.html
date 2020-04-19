@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    
+  </div>  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script>
+    const baseURL = "http://localhost:3000/api"
+
+    localStorage.setItem('token','token nih ceritanya')
+    const myData = {
+      nama: 'Athalla',
+      alamat: 'Buah Batu'
+    }
+    $.ajax({
+      headers: {
+        'Authorization' : 'Bearer ' + localStorage.getItem('token')
+      },
+      type: "POST",
+      url: baseURL+'/pasien/registrasi',
+      data: JSON.stringify(myData),
+      contentType: "application/json",
+      dataType: "json"
+    }).done(function(response) {
+      alert("Update success!"+ response.message) 
+    }).fail(function(response) {
+      alert('Error: ' + response.sqlMessage)
+    })            
+  </script>
+</body>
+</html>

@@ -1,7 +1,9 @@
 function regisUser(req,res) {
   res.render('regisUser', {
     layout: 'main',
-    nama: "Alif"
+    nama: "Alif",
+    dokter: false,
+    pasien: true,
   })
 }
 
