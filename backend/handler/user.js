@@ -92,7 +92,11 @@ function getData(req,res) {
   .where('id_pasien', req.user.id_pasien)
   .select()
   .then(result => {
-    res.status(200).json({success:true, data: result})
+    const date = new Date(result[0].tanggal_lahir)
+    const dd = date.getDate()
+    const mm = date.getMonth()
+    const yyyy = 
+    res.status(200).json({success:true, data: result[0]})
   })
 }
 
