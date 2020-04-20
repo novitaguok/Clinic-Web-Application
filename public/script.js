@@ -18,6 +18,9 @@ document.getElementById("btnLogin").addEventListener("click", async () => {
     dataType: "json",
   }).done(function(response) {
     if(response.success){
+      localStorage.setItem('Token', response.token)
+      localStorage.setItem('name', response.data.nama)
+      
       alert("Login "+ response.message) 
       window.location.href = "/home";
     }else{
