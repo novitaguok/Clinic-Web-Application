@@ -9,6 +9,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     /> -->
+    <script src="script.js"></script>
 
     <!-- Bootstrap -->
     <link
@@ -64,7 +65,7 @@
   <body>
     <div class="page-wrapper">
       <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <a class="navbar-brand" href="/dokter">Klinik Tongfang</a>
+        <a class="navbar-brand" href="/home">Klinik Tongfang</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -78,153 +79,86 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/dokter"
+            <a class="nav-item nav-link active" href="/home"
               >Home <span class="sr-only">(current)</span></a
             >
             <a class="nav-item nav-link" href="#">About</a>
-            <a class="nav-item nav-link" href="#">Appointment</a>
+            <a class="nav-item nav-link" href="/pilihDokter">Appointment</a>
           </div>
         </div>
       </nav>
 
-      <!-- Form Register -->
-      <center>
-        <h1 style="margin-top: 48px;">Register</h1>
-      </center>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 offset-md-4">
-            <!-- <form class="" style="margin-top: 24px;"> -->
-              <div class="form-group row" style="margin-bottom: 24px;">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Nama Lengkap"
-                  required
-                />
-              </div>
-              <div class="form-group row" style="margin-bottom: 24px;">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="inputEmail3"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-              <div class="form-group row" style="margin-bottom: 24px;">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword3"
-                  placeholder="Password"
-                  required
-                />
-              </div>
-              <div class="form-group row" style="margin-bottom: 24px;">
-                <input id="datepicker" placeholder="Tanggal Lahir" required/>
-                <script>
-                  $('#datepicker').datepicker({
-                    uiLibrary: 'bootstrap4',
-                  });
-                </script>
-              </div>
-              <div class="form-group row">
-                <div class="switch-field">
-                  <input
-                    type="radio"
-                    id="radio-one"
-                    name="gender"
-                    value="Laki-laki"
-                    checked
-                  />
-                  <label for="radio-one">Laki-laki</label>
-                  <input
-                    type="radio"
-                    id="radio-two"
-                    name="gender"
-                    value="Perempuan"
-                  />
-                  <label for="radio-two">Perempuan</label>
-                </div>
+      <!-- Find Doctor -->
+      <section class="info-section section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6 col-md-6">
+              <!-- Content -->
+              <div class="Page1" style="margin-top: 48px;">
+                <h6>Kami Pastikan</h6>
+                <ul style="list-style: none;">
+                  <li>
+                    <i class="fa fa-commenting"></i>
+                    <p>
+                      Dapatkan penjelasan dan saran medis yang akurat dan dapat
+                      dipercaya
+                    </p>
+                  </li>
+                  <li>
+                    <i class="fa fa-lock"></i>
+                    <p>Privasi kamu dijamin</p>
+                  </li>
+                </ul>
               </div>
 
-              <div class="form-group row">
-                <div class="btn-group btn-block">
-                  <select class="bidang btn btn-outline-success dropdown-toggle">
-                    <option class="dropdown-item" value="false" selected="selected">Bidang</option>
-                    <option class="dropdown-item" value="Gigi">Gigi</option>
-                    <option class="dropdown-item" value="Umum">Umum</option>
-                  </select>
-                  <!-- <button
-                    type="button"
-                    class="btn btn-outline-success dropdown-toggle"
+              <!-- End -->
+            </div>
+            <div
+              class="col-6 col-md-6"
+              style="
+                background-color: #eeeeee;
+                overflow-y: scroll;
+                height: 100vh;
+              "
+            >
+              <div
+                data-spy="scroll"
+                data-target="#navbar-example2"
+                data-offset="0"
+              >
+                <div class="dropdown">
+                  <button
+                    class="btn btn-outline-success btn-block dropdown-toggle"
                     type="button"
                     id="dropdownMenuButton"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
-                    style="outline: none;"
+                    style="
+                      border-radius: 360px;
+                      margin-top: 48px;
+                      margin-bottom: 48px;
+                      background-color: white;
+                    "
                   >
-                    Bidang
+                    Jenis Dokter
                   </button>
                   <div
                     class="dropdown-menu btn-block"
                     aria-labelledby="dropdownMenuButton"
                   >
                     <a class="dropdown-item" value="umum">Umum</a>
-                    <a class="dropdown-item" value="gigi">Gigi</a>
-                  </div> -->
+                    <a class="dropdown-item" value="gigi">Gigi</a>  
+                  </div>
+                </div>
+                <div class="row" id="listDokter">
+                  
                 </div>
               </div>
-              <div class="form-group row" style="margin-bottom: 32px;">
-                <div class="btn-group btn-block">
-                  <select class="pengalaman btn btn-outline-success dropdown-toggle">
-                    <option class="dropdown-item" value="false" selected="selected">Pengalaman</option>
-                    <option class="dropdown-item" value="level1">1 - 5 Tahun</option>
-                    <option class="dropdown-item" value="level2">6 - 10 Tahun</option>
-                    <option class="dropdown-item" value="level3">>10 Tahun</option>
-                  </select>
-                  <!-- <button
-                    type="button"
-                    class="btn btn-outline-success dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Pengalaman
-                  </button>
-                  <div
-                    class="dropdown-menu btn-block"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" value="level1">1 - 5 Tahun</a>
-                    <a class="dropdown-item" value="level2">6 - 10 Tahun</a>
-                    <a class="dropdown-item" value="level3">>10 Tahun</a>
-                  </div> -->
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <center>
-                  <p>
-                    Note: Pastikan email Anda benar untuk mendapatkan informasi
-                    selanjutnya.
-                  </p>
-                </center>
-              </div>
-              <div class="form-group row">
-                <button class="btn btn-success btn-block" id="btnSubmit">
-                  Daftar
-                </button>
-              </div>
-            <!-- </form> -->
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!--footer-main-->
       <footer class="footer-main">
@@ -274,12 +208,6 @@
       <!--End footer-main-->
     </div>
     <!--End pagewrapper-->
-
-    <!--Scroll to top-->
-    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
-      <span class="icon fa fa-angle-up"></span>
-    </div>
-
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

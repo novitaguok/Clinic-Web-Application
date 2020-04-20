@@ -79,10 +79,11 @@ function update(req,res) {
   .where('id_pasien', req.user.id_pasien)
   .update(data)
   .then(()=>{
-    res.status(200).json({success: true, data: data})
+    res.status(200).json({success: true, data: data, message: 'Update Berhasil!'})
   })
   .catch(error => {
     console.log(error)
+    res.status(400).json({success: false, message: error})
   })
 }
 
