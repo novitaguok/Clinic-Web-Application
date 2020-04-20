@@ -6,7 +6,6 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   myData['tanggal_lahir'] = $('#datepicker').val(),
   myData['email'] = $('#inputEmail3').val(),
   myData['password'] = $('#inputPassword3').val()
-  localStorage.setItem('nama', myData.nama)
   $.ajax({
     type: "POST",
     url: localStorage.getItem('BASE_URL')+'/pasien/registrasi',

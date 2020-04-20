@@ -20,7 +20,6 @@ document.getElementById("btnLogin").addEventListener("click", async () => {
     if(response.success){
       localStorage.setItem('Token', response.token)
       localStorage.setItem('name', response.data.nama)
-      
       alert("Login "+ response.message) 
       window.location.href = "/home";
     }else{
