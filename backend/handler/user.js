@@ -99,6 +99,10 @@ function getData(req,res) {
     const yyyy = 
     res.status(200).json({success:true, data: result[0]})
   })
+  .catch(error => {
+    console.log(error)
+    res.status(400).json({success: false, message: error})
+  })
 }
 
 module.exports = {
