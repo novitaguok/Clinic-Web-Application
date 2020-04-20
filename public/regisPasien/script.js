@@ -9,7 +9,7 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   localStorage.setItem('nama', myData.nama)
   $.ajax({
     type: "POST",
-    url: baseURL+'/pasien/registrasi',
+    url: localStorage.getItem('BASE_URL')+'/pasien/registrasi',
     data: JSON.stringify(myData),
     contentType: "application/json",
     dataType: "json",

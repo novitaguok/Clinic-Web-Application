@@ -5,7 +5,7 @@ document.getElementById("btnRegis2").addEventListener("click", async () => {
   window.location.href = "/regisPasien";
 })
 
-localStorage.setItem('BASE_URL', 'http://localhost:3000/api')
+localStorage.setItem('BASE_URL', 'https://klinik-tongfang.herokuapp.com/api')
 document.getElementById("btnLogin").addEventListener("click", async () => {
   const myData = {}
   myData['email'] = $('#email').val()
