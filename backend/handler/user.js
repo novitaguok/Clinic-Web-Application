@@ -47,7 +47,7 @@ function login(req,res) {
         token = signUser(data)
         res.status(200).json({success:true, token:token, data:result[0], message: 'Berhasil!'})      
       }else{
-        res.status(400).json({success:false, message: 'password salah!'})      
+        res.status(200).json({success:false, message: 'password salah!'})      
       }
     }
   })
