@@ -34,7 +34,7 @@ function login(req,res) {
   db.from('dokter').where('email', payload.email)
   .then(result => {
     if(result.length==0){
-      res.status(404).json({success:false, message: 'akun tidak terdaftar!'})
+      res.status(200).json({success:false, message: 'akun tidak terdaftar!'})
     }else{
       const data = {
         id_dokter: result[0].id_dokter,
@@ -50,7 +50,7 @@ function login(req,res) {
         token = signUser(data)
         res.status(200).json({success:true, token:token, data:result[0]})      
       }else{
-        res.status(400).json({success:false, message: 'password salah!'})      
+        res.status(200).json({success:false, message: 'password salah!'})      
       }
     }
   })

@@ -32,7 +32,7 @@ function login(req,res) {
   .then(result => {
     console.log(result)
     if(result.length==0){
-      res.status(404).json({success:false, message: 'akun tidak terdaftar!'})
+      res.status(200).json({success:false, message: 'akun tidak terdaftar!'})
     }else{
       const data = {
         id_pasien: result[0].id_pasien,
