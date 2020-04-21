@@ -1,5 +1,4 @@
 document.getElementById("btnSubmit").addEventListener("click", async () => {
-  const baseURL = "http://localhost:3000/api"
   const myData = {}
   myData['nama'] = $('#name').val(),
   myData['gender'] = $("input[name='gender']:checked").val(),
@@ -11,7 +10,7 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   localStorage.setItem('nama', myData.nama)
   $.ajax({
     type: "POST",
-    url: baseURL+'/dokter/registrasi',
+    url: localStorage.getItem('BASE_URL')+'/dokter/registrasi',
     data: JSON.stringify(myData),
     contentType: "application/json",
     dataType: "json",
@@ -22,8 +21,29 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
     }else{
       alert(response.message) 
     }
-    
+
   }).fail(function(response) {
-    alert('Error: ' + response.sqlMessage)
-  })            
+    alert('Error: ' + response.message)
+  })   
+  // const foto = document.getElementById('foto')
+  // const formData = new FormData()
+
+  // formData.append('foto', foto.files[0]);
+  // $.ajax({
+  //   type: "POST",
+  //   url: localStorage.getItem('BASE_URL')+'/dokter/foto',
+  //   data: formData,
+  //   contentType: "application/json",
+  //   dataType: "json",
+  // }).done(function(response) {
+  //   if(response.success){
+  //     alert("Registrasi "+ response.message) 
+  //   }else{
+  //     alert(response.message) 
+  //   }
+
+  // }).fail(function(response) {
+  //   alert('Error: ' + response.message)
+  // })
+  
 })
