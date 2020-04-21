@@ -152,10 +152,12 @@
 
               <div class="form-group row">
                 <div class="btn-group btn-block">
-                  <select class="bidang btn btn-outline-success dropdown-toggle">
+                  <select class="bidang btn btn-outline-success dropdown-toggle" id="bidang">
                     <option class="dropdown-item" value="false" selected="selected">Bidang</option>
                     <option class="dropdown-item" value="Gigi">Gigi</option>
                     <option class="dropdown-item" value="Umum">Umum</option>
+                    <option class="dropdown-item" value="Orthopedi">Orthopedi</option>
+                    <option class="dropdown-item" value="THT">THT</option>
                   </select>
                   <!-- <button
                     type="button"
@@ -180,11 +182,11 @@
               </div>
               <div class="form-group row" style="margin-bottom: 32px;">
                 <div class="btn-group btn-block">
-                  <select class="pengalaman btn btn-outline-success dropdown-toggle">
+                  <select class="pengalaman btn btn-outline-success dropdown-toggle" id="pengalaman">
                     <option class="dropdown-item" value="false" selected="selected">Pengalaman</option>
-                    <option class="dropdown-item" value="level1">1 - 5 Tahun</option>
-                    <option class="dropdown-item" value="level2">6 - 10 Tahun</option>
-                    <option class="dropdown-item" value="level3">>10 Tahun</option>
+                    <option class="dropdown-item" value="1 - 5 Tahun">1 - 5 Tahun</option>
+                    <option class="dropdown-item" value="6 - 10 Tahun">6 - 10 Tahun</option>
+                    <option class="dropdown-item" value=">10 Tahun">>10 Tahun</option>
                   </select>
                   <!-- <button
                     type="button"
@@ -207,8 +209,8 @@
                   </div> -->
                 </div>
               </div>
-              <!-- <div class="form-group custom-file" style="margin-bottom: 32px;">
-                <input type="file" class="custom-file-input" id="foto" required>
+              <!-- <div class="custom-file" style="margin-bottom: 32px;">
+                <input accept="image/jpeg,image/png" type="file" class="custom-file-input" name='foto' id="foto">
                 <label class="custom-file-label" for="foto">Choose file...</label>
               </div> -->
               <div class="form-group row">
@@ -277,11 +279,6 @@
       <!--End footer-main-->
     </div>
     <!--End pagewrapper-->
-
-    <!--Scroll to top-->
-    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
-      <span class="icon fa fa-angle-up"></span>
-    </div>
 
     <script type="text/javascript" src="script.js"></script>
   </body>

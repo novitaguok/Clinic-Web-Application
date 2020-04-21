@@ -5,8 +5,8 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   myData['tanggal_lahir'] = $('#datepicker').val(),
   myData['email'] = $('#inputEmail3').val(),
   myData['password'] = $('#inputPassword3').val()
-  myData['bidang'] = 'Dokter Umum'
-  myData['pengalaman'] = '1 - 5 Tahun'
+  myData['bidang'] = $("#bidang :selected").text()
+  myData['pengalaman'] = $("#pengalaman :selected").text()
   localStorage.setItem('nama', myData.nama)
   $.ajax({
     type: "POST",
@@ -17,7 +17,7 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   }).done(function(response) {
     if(response.success){
       alert("Registrasi "+ response.message) 
-      window.location.href = "/";
+      window.location.href = "/dokter";
     }else{
       alert(response.message) 
     }
@@ -31,13 +31,16 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   // formData.append('foto', foto.files[0]);
   // $.ajax({
   //   type: "POST",
+  //   method: "POST",
+  //   cache: false,
+  //   contentType: false,
+  //   processData: false,
   //   url: localStorage.getItem('BASE_URL')+'/dokter/foto',
   //   data: formData,
-  //   contentType: "application/json",
   //   dataType: "json",
   // }).done(function(response) {
   //   if(response.success){
-  //     alert("Registrasi "+ response.message) 
+  //     alert("Foto  "+ response.message) 
   //   }else{
   //     alert(response.message) 
   //   }

@@ -9,7 +9,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     /> -->
-    <script src="script.js"></script>
 
     <!-- Bootstrap -->
     <link
@@ -58,8 +57,8 @@
     <link href="style.css" rel="stylesheet" />
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="../images/logo.png" type="image/png" />
-    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
@@ -93,20 +92,106 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-6 col-md-6">
+              <!-- Tes 1 -->
+              <div
+                id="carouselExampleSlidesOnly"
+                class="carousel slide"
+                data-ride="carousel"
+              >
+                <ol class="carousel-indicators">
+                  <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="0"
+                    class="active"
+                  ></li>
+                  <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="1"
+                  ></li>
+                  <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="2"
+                  ></li>
+                </ol>
+                <div
+                  class="carousel-inner"
+                  style="height: 400px; margin-top: 48px;"
+                >
+                  <div class="carousel-item active">
+                    <img
+                      src="../images/doctors.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                    <div
+                      class="carousel-caption d-none d-md-block"
+                      style="
+                        background-color: rgba(0.5, 0.5, 0.5, 0.5);
+                        margin-bottom: 500px;
+                      "
+                    >
+                      <h5>Pilih dokter Anda</h5>
+                      <p>
+                        Pilih dokter yang diinginkan, dan juga bisa filter
+                        berdasarkan jenis dokter umum atau gigi.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="../images/emergencyteam.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                    <div
+                      class="carousel-caption d-none d-md-block"
+                      style="
+                        background-color: rgba(0.5, 0.5, 0.5, 0.5);
+                        margin-bottom: 50px;
+                      "
+                    >
+                      <h5>Dokter akan menerima notifikasi</h5>
+                      <p>
+                        Dokter akan menerima informasi secara cepat dan Anda
+                        dapat menentukan jadwal.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="../images/vsvirus.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                    <div
+                      class="carousel-caption d-none d-md-block"
+                      style="
+                        background-color: rgba(0.5, 0.5, 0.5, 0.5);
+                        margin-bottom: 200px;
+                      "
+                    >
+                      <h5>Follow-up</h5>
+                      <p>
+                        Setelah kesepakatan tercapai, maka Anda harus tetap
+                        meng-update informasi janji temu.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Test -->
               <!-- Content -->
               <div class="Page1" style="margin-top: 48px;">
                 <h6>Kami Pastikan</h6>
-                <ul style="list-style: none;">
+                <ul class="fa-ul">
                   <li>
-                    <i class="fa fa-commenting"></i>
-                    <p>
-                      Dapatkan penjelasan dan saran medis yang akurat dan dapat
-                      dipercaya
-                    </p>
+                    <span class="fa-li"><i class="fa fa-commenting"></i></span>
+                    Dapatkan penjelasan dan saran medis yang akurat dan dapat
+                    dipercaya
                   </li>
                   <li>
-                    <i class="fa fa-lock"></i>
-                    <p>Privasi kamu dijamin</p>
+                    <span class="fa-li"><i class="fa fa-lock"></i></span>
+                    Privasi kamu dijamin
                   </li>
                 </ul>
               </div>
@@ -147,8 +232,11 @@
                     class="dropdown-menu btn-block"
                     aria-labelledby="dropdownMenuButton"
                   >
-                    <a class="dropdown-item" value="umum">Umum</a>
-                    <a class="dropdown-item" value="gigi">Gigi</a>  
+                    <button class="dropdown-item" onclick="umum(0)">Semua</button>
+                    <button class="dropdown-item" onclick="umum(1)">Umum</button>
+                    <button class="dropdown-item" onclick="umum(2)">Gigi</button>
+                    <button class="dropdown-item" onclick="umum(3)">Orthopedi</button>
+                    <button class="dropdown-item" onclick="umum(4)">THT</button>
                   </div>
                 </div>
                 <div class="row" id="listDokter">
@@ -208,6 +296,7 @@
       <!--End footer-main-->
     </div>
     <!--End pagewrapper-->
+
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

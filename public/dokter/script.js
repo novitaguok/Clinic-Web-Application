@@ -1,18 +1,19 @@
 document.getElementById("btnRegis").addEventListener("click", async () => {
-  window.location.href = "/regisPasien";
+  window.location.href = "/regisDokter";
 })
 document.getElementById("btnRegis2").addEventListener("click", async () => {
-  window.location.href = "/regisPasien";
+  window.location.href = "/regisDokter";
 })
 
 localStorage.setItem('BASE_URL', window.location.origin + '/api')
+
 document.getElementById("btnLogin").addEventListener("click", async () => {
   const myData = {}
   myData['email'] = $('#email').val()
   myData['password'] = $('#password').val()
   $.ajax({
     type: "POST",
-    url: localStorage.getItem('BASE_URL')+'/pasien/login',
+    url: localStorage.getItem('BASE_URL')+'/dokter/login',
     data: JSON.stringify(myData),
     contentType: "application/json",
     dataType: "json",
@@ -21,7 +22,7 @@ document.getElementById("btnLogin").addEventListener("click", async () => {
       localStorage.setItem('Token', response.token)
       localStorage.setItem('name', response.data.nama)
       alert("Login "+ response.message) 
-      window.location.href = "/home";
+      window.location.href = "/homeDokter";
     }else{
       alert(response.message) 
     }
@@ -30,5 +31,3 @@ document.getElementById("btnLogin").addEventListener("click", async () => {
     alert('Error: ' + response.message)
   })            
 })
-
-

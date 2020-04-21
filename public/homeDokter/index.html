@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Klinik Tongfang</title>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script 
+      type="text/javascript" 
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="plugins/slick/slick.css" />
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css" />
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css" />
+
+    <!-- Stylesheets -->
+    <link href="style.css" rel="stylesheet" />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="/homeDokter">Klinik Tongfang</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="/homeDokter"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+                >Appoinment</a
+              >
+            </li>
+          </ul>
+          <div class="btn-group">
+            <button
+              type="button"
+              id="username"
+              class="btn btn-outline-success dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              style="color: white;"
+            >
+              Hi, { User }
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <button class="dropdown-item" type="button">
+                <i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;&nbsp;Profil
+              </button>
+              <button class="dropdown-item" type="button">
+                <i class="fa fa-history"></i>&nbsp;&nbsp;&nbsp;Riwayat
+              </button>
+              <div class="dropdown-divider"></div>
+              <button id="logout" class="dropdown-item" type="button">
+                <i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Log Out
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- If Empty -->
+      <section class="nodata-section" style="height: 80vh;">
+        <div class="container">
+          <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+          <div class="row">
+            <div class="col-6 col-md-5">
+              <img src="../images/nodata.png" style="height: 500px;" />
+            </div>
+            <div class="col-md-7">
+              <h1
+                style="
+                  top: 50%;
+                  position: relative;
+                  color: #f8b955;
+                  text-align: center;
+                "
+              >
+                NO DATA ENTRY
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kalo ada isi -->
+      <section class="customer-list-section">
+        <div class="container-fluid">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <div class="col">
+              <!-- Per Card -->
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">{ Nama Pasien }</h5>
+                </div>
+                <div class="card-body">
+                  <div class="img-dr">
+                    <img src="../images/resource/doctor_default_seo.png" />
+                  </div>
+                  <div class="info-dr">
+                    <p class="card-text">
+                      With supporting text below as a natural lead-in to
+                      additional content.
+                    </p>
+                  </div>
+                </div>
+                <center>
+                  <a href="#" class="btn btn-success">Lihat Pasien</a>
+                </center>
+              </div>
+              <!-- End a Card -->
+            </div>
+            <div class="col">
+              <!-- Per Card -->
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">{ Nama Pasien }</h5>
+                </div>
+                <div class="card-body">
+                  <div class="img-dr">
+                    <img src="../images/resource/doctor_default_seo.png" />
+                  </div>
+                  <div class="info-dr">
+                    <p class="card-text">
+                      With supporting text below as a natural lead-in to
+                      additional content.
+                    </p>
+                  </div>
+                </div>
+                <center>
+                  <a href="#" class="btn btn-success">Lihat Pasien</a>
+                </center>
+              </div>
+              <!-- End a Card -->
+            </div>
+            <div class="col">
+              <!-- Per Card -->
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">{ Nama Pasien }</h5>
+                </div>
+                <div class="card-body">
+                  <div class="img-dr">
+                    <img src="../images/resource/doctor_default_seo.png" />
+                  </div>
+                  <div class="info-dr">
+                    <p class="card-text">
+                      With supporting text below as a natural lead-in to
+                      additional content.
+                    </p>
+                  </div>
+                </div>
+                <center>
+                  <a href="#" class="btn btn-success">Lihat Pasien</a>
+                </center>
+              </div>
+              <!-- End a Card -->
+            </div>
+            <div class="col">
+              <!-- Per Card -->
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">{ Nama Pasien }</h5>
+                </div>
+                <div class="card-body">
+                  <div class="img-dr">
+                    <img src="../images/resource/doctor_default_seo.png" />
+                  </div>
+                  <div class="info-dr">
+                    <p class="card-text">
+                      With supporting text below as a natural lead-in to
+                      additional content.
+                    </p>
+                  </div>
+                </div>
+                <center>
+                  <a href="#" class="btn btn-success">Lihat Pasien</a>
+                </center>
+              </div>
+              <!-- End a Card -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--footer-main-->
+      <footer class="footer-main">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="about-widget">
+                  <h1>
+                    Klinik Tongfang
+                  </h1>
+                  <ul class="info" style="list-style: none;">
+                    <li class="item">
+                      <i class="fa fa-map-marker"></i>
+                      <p>Bandung</p>
+                    </li>
+                    <li class="item">
+                      <a href="#">
+                        <i class="fa fa-envelope-o"></i>
+                        <p>tongfang@gmail.com</p>
+                      </a>
+                    </li>
+                    <li class="item">
+                      <i class="fa fa-phone"></i>
+                      <p>081234567890</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h6>Pelayanan</h6>
+                <ul class="pelayanan" style="list-style: none; color: white;">
+                  <li>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="#"> Klinik Umum</a>
+                  </li>
+                  <li>
+                    <i class="fa fa-angle-right"></i>
+                    <a href="#">Klinik Gigi</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--End footer-main-->
+    </div>
+    <!--End pagewrapper-->
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

@@ -17,6 +17,7 @@ backend.get('/pasien', authenticateToken, user.getData)
 backend.post('/dokter/registrasi', dokter.regis)
 backend.post('/dokter/login', dokter.login)
 backend.post('/dokter/update', dokter.update)
-backend.get('/dokter/get', dokter.getData)
+backend.get('/dokter/get/:id', dokter.getData)
+backend.post('/dokter/foto', dokter.foto)
 
 module.exports = backend

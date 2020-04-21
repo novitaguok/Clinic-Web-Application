@@ -2,7 +2,7 @@ const { db } = require("../../module/db")
 const { encryptPass, isValid } = require("../../module/encrypt")
 const { signUser } = require("../../module/auth")
 const multer = require('multer')
-const ejs = require('ejs')
+const path = require('path')
 
 async function regis(req,res) {
   const payload = req.body
@@ -19,6 +19,7 @@ async function regis(req,res) {
     email : payload.email, 
     password: hash
   }
+  console.log(data)
 
   const search = await db.from('dokter').where('email', payload.email)
   if (search.length == 0){
@@ -50,7 +51,7 @@ function login(req,res) {
       if(valid){
         // console.log(data)
         token = signUser(data)
-        res.status(200).json({success:true, token:token, data:result[0]})      
+        res.status(200).json({success:true, token:token, data:result[0], message: 'Berhasil!'})      
       }else{
         res.status(200).json({success:false, message: 'password salah!'})      
       }
@@ -98,30 +99,123 @@ function update(req,res) {
 
 function getData(req,res) {
   console.log('get')
-  db.from('dokter')
-  .select()
-  .then(result => {
-    // const date = new Date(result[0].tanggal_lahir)
-    // const dd = date.getDate()
-    // const mm = date.getMonth
-    // const yyyy = date.getFullYear
-    // result[0].tanggal_lahir = dd+'-'+mm+'-'+yyyy
-    console.log(result)
-    res.status(200).json({success:true, message: 'Berhasil!',data: result})
-  })
-  .catch(error => {
-    console.log(error)
-    res.status(400).json({success: false, message: error})
-  })
+  if(req.params.id == '0'){
+    console.log('all')
+    db.from('dokter')
+    .select()
+    .then(result => {
+      // const date = new Date(result[0].tanggal_lahir)
+      // const dd = date.getDate()
+      // const mm = date.getMonth
+      // const yyyy = date.getFullYear
+      // result[0].tanggal_lahir = dd+'-'+mm+'-'+yyyy
+      res.status(200).json({success:true, message: 'Berhasil!',data: result})
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(400).json({success: false, message: error})
+    })
+  } else if(req.params.id == '1'){
+    console.log('umum')
+    db.from('dokter')
+    .where('bidang', 'Umum')
+    .select()
+    .then(result => {
+      // const date = new Date(result[0].tanggal_lahir)
+      // const dd = date.getDate()
+      // const mm = date.getMonth
+      // const yyyy = date.getFullYear
+      // result[0].tanggal_lahir = dd+'-'+mm+'-'+yyyy
+      res.status(200).json({success:true, message: 'Berhasil!',data: result})
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(400).json({success: false, message: error})
+    })
+  }else if(req.params.id == '2'){
+    console.log('gigi')
+    db.from('dokter')
+    .where('bidang', 'Gigi')
+    .select()
+    .then(result => {
+      // const date = new Date(result[0].tanggal_lahir)
+      // const dd = date.getDate()
+      // const mm = date.getMonth
+      // const yyyy = date.getFullYear
+      // result[0].tanggal_lahir = dd+'-'+mm+'-'+yyyy
+      res.status(200).json({success:true, message: 'Berhasil!',data: result})
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(400).json({success: false, message: error})
+    })
+  }else if(req.params.id == '3'){
+    console.log('orthopedi')
+    db.from('dokter')
+    .where('bidang', 'Orthopedi')
+    .select()
+    .then(result => {
+      // const date = new Date(result[0].tanggal_lahir)
+      // const dd = date.getDate()
+      // const mm = date.getMonth
+      // const yyyy = date.getFullYear
+      // result[0].tanggal_lahir = dd+'-'+mm+'-'+yyyy
+      res.status(200).json({success:true, message: 'Berhasil!',data: result})
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(400).json({success: false, message: error})
+    })
+  }else if(req.params.id == '4'){
+    console.log('gigi')
+    db.from('dokter')
+    .where('bidang', 'THT')
+    .select()
+    .then(result => {
+      // const date = new Date(result[0].tanggal_lahir)
+      // const dd = date.getDate()
+      // const mm = date.getMonth
+      // const yyyy = date.getFullYear
+      // result[0].tanggal_lahir = dd+'-'+mm+'-'+yyyy
+      res.status(200).json({success:true, message: 'Berhasil!',data: result})
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(400).json({success: false, message: error})
+    })
+  }
+    
 }
 
-// function foto(req,res) {
+function foto(req,res) {
+  console.log('==============')
+  console.log(req)
+  console.log('=============')
+  // const storage = multer.diskStorage({
+  //   destination: '../../public/images/dokter',
+  //   filename: function (req,file,cb) {
+  //     cb(null,'1' + path.extname(file.originalname))
+  //   }
+    
+  // })
+  // const upload = multer({
+  //   storage: storage
+  // }).single('foto')
   
-// }
+  // upload(req,res, (err) =>{
+  //   if(err){
+  //     res.status(400).json({success: false, message: err})
+  //   }else{
+  //     console.log(req.file)
+  //     res.status(200).json({success:true, message: 'Berhasil!'})
+  //   }
+  // })
+}
 
 module.exports = {
   regis,
   login,
   update,
-  getData
+  getData,
+  foto
 }
