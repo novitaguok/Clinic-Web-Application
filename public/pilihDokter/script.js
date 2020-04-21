@@ -17,8 +17,7 @@ $.ajax({
             </div>
             <div class="info-dr">
               <p class="card-text">
-                With supporting text below as a natural lead-in to
-                additional content.
+                Dokter pada bidang ${data.bidang} yang memiliki pengalaman ${data.pengalaman}.
               </p>
             </div>
           </div>
@@ -33,7 +32,7 @@ $.ajax({
   }
   
 }).fail(function(response) {
-  alert('Error: ' + response.sqlMessage)
+  alert('Error: ' + response.message)
 })            
   
 
@@ -43,7 +42,7 @@ function pilih(id) {
   <div class="col-md-6">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title">Dr. Blabla ${id}</h5>
+        <h5 class="card-title">Pilih Dokter id ${id}</h5>
       </div>
       <div class="card-body">
         <div class="img-dr">

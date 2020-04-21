@@ -1,6 +1,8 @@
 const { db } = require("../../module/db")
 const { encryptPass, isValid } = require("../../module/encrypt")
 const { signUser } = require("../../module/auth")
+const multer = require('multer')
+const ejs = require('ejs')
 
 async function regis(req,res) {
   const payload = req.body
@@ -95,7 +97,7 @@ function update(req,res) {
 }
 
 function getData(req,res) {
-  // console.log(req.user)
+  console.log('get')
   db.from('dokter')
   .select()
   .then(result => {
@@ -112,6 +114,10 @@ function getData(req,res) {
     res.status(400).json({success: false, message: error})
   })
 }
+
+// function foto(req,res) {
+  
+// }
 
 module.exports = {
   regis,

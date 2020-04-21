@@ -21,8 +21,29 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
     }else{
       alert(response.message) 
     }
-    
+
   }).fail(function(response) {
-    alert('Error: ' + response.sqlMessage)
-  })            
+    alert('Error: ' + response.message)
+  })   
+  // const foto = document.getElementById('foto')
+  // const formData = new FormData()
+
+  // formData.append('foto', foto.files[0]);
+  // $.ajax({
+  //   type: "POST",
+  //   url: localStorage.getItem('BASE_URL')+'/dokter/foto',
+  //   data: formData,
+  //   contentType: "application/json",
+  //   dataType: "json",
+  // }).done(function(response) {
+  //   if(response.success){
+  //     alert("Registrasi "+ response.message) 
+  //   }else{
+  //     alert(response.message) 
+  //   }
+
+  // }).fail(function(response) {
+  //   alert('Error: ' + response.message)
+  // })
+  
 })
