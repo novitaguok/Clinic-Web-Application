@@ -95,16 +95,17 @@ function update(req,res) {
 }
 
 function getData(req,res) {
-  console.log(req.user)
+  // console.log(req.user)
   db.from('dokter')
   .select()
   .then(result => {
-    const date = new Date(result[0].tanggal_lahir)
-    const dd = date.getDate()
-    const mm = date.getMonth
-    const yyyy = date.getFullYear
-    result[0].tanggal_lahir = dd+'-'+mm+'-'+yyyy
-    res.status(200).json({success:true, data: result[0]})
+    // const date = new Date(result[0].tanggal_lahir)
+    // const dd = date.getDate()
+    // const mm = date.getMonth
+    // const yyyy = date.getFullYear
+    // result[0].tanggal_lahir = dd+'-'+mm+'-'+yyyy
+    console.log(result)
+    res.status(200).json({success:true, message: 'Berhasil!',data: result})
   })
   .catch(error => {
     console.log(error)
@@ -115,5 +116,6 @@ function getData(req,res) {
 module.exports = {
   regis,
   login,
-  update
+  update,
+  getData
 }

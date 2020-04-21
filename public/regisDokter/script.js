@@ -1,5 +1,4 @@
 document.getElementById("btnSubmit").addEventListener("click", async () => {
-  const baseURL = "http://localhost:3000/api"
   const myData = {}
   myData['nama'] = $('#name').val(),
   myData['gender'] = $("input[name='gender']:checked").val(),
@@ -11,7 +10,7 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   localStorage.setItem('nama', myData.nama)
   $.ajax({
     type: "POST",
-    url: baseURL+'/dokter/registrasi',
+    url: localStorage.getItem('BASE_URL')+'/dokter/registrasi',
     data: JSON.stringify(myData),
     contentType: "application/json",
     dataType: "json",

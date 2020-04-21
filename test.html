@@ -29,10 +29,10 @@
       headers: {
         'Authorization' : 'Bearer ' + localStorage.getItem('token')
       },
-      type: "POST",
-      url: baseURL+'/pasien/registrasi',
-      data: JSON.stringify(myData),
-      contentType: "application/json",
+      type: "GET",
+      url: baseURL+'/dokter/get',
+      // data: JSON.stringify(myData),
+      // contentType: "application/json",
       dataType: "json"
     }).done(function(response) {
       alert("Update success!"+ response.message) 
