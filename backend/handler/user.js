@@ -55,31 +55,22 @@ function login(req,res) {
 
 function update(req,res) {
   const payload = req.body
-  const data = {}
-  if(payload.namaLengkap){
-    data['nama'] = payload.namaLengkap
+  console.log(payload)
+  const date = payload.tanggal_lahir.split('/')
+  console.log(date)
+  const data = {
+    nama : payload.nama,
+    tanggal_lahir : `${date[2]}-${date[1]}-${date[0]}`,
+    email : payload.email, 
+    password: payload.password
   }
-  if (payload.alamat){
-    data['alamat'] = payload.alamat
-  }
-  if (payload.tempatLahir){
-    data['tempat_lahir'] = payload.tempatLahir
-  }
-  if (payload.tanggalLahir){
-    data['tanggal_lahir'] = payload.tanggalLahir
-  }
-  if (payload.email){
-    data['email'] = payload.email
-  }
-  if (payload.password){
-    data['password'] = encryptPass(payload.password)
-  }
-  console.log(req.user);
+  console.log(data)
+  // console.log(req.user);
   db('pasien')
   .where('id_pasien', req.user.id_pasien)
   .update(data)
   .then(()=>{
-    res.status(200).json({success: true, data: data, message: 'Update Berhasil!'})
+    res.status(200).json({success: true, data: data, message: 'Berhasil!'})
   })
   .catch(error => {
     console.log(error)
@@ -88,20 +79,21 @@ function update(req,res) {
 }
 
 function getData(req,res) {
-  console.log(req.user)
+  // console.log(req.user)
   db.from('pasien')
   .where('id_pasien', req.user.id_pasien)
   .select()
   .then(result => {
     const date = new Date(result[0].tanggal_lahir)
-    const dd = date.getDate()
-    const mm = date.getMonth()
-    const yyyy = 
+    const dd = String(date.getDate()).padStart(2, "0")
+    const mm = String(date.getMonth()+1).padStart(2, "0")
+    const yyyy = date.getFullYear()
+    result[0].tanggal_lahir = dd+'/'+mm+'/'+yyyy
     res.status(200).json({success:true, data: result[0]})
   })
   .catch(error => {
     console.log(error)
-    res.status(400).json({success: false, message: error})
+    res.status(400).json({success: false, message: 'error'})
   })
 }
 

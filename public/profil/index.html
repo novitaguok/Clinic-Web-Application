@@ -9,6 +9,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     /> -->
+
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -56,119 +57,127 @@
     <link href="style.css" rel="stylesheet" />
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="../images/logo.png" type="image/png" />
-    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
     <div class="page-wrapper">
       <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <a class="navbar-brand" href="/">Klinik Tongfang</a>
         <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
+          data-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/"
-              >Home <span class="sr-only">(current)</span></a
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="/home">Klinik Tongfang</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+                >Appoinment</a
+              >
+            </li>
+          </ul>
+          <div class="btn-group">
+            <button
+              type="button"
+              id="username"
+              class="btn btn-outline-success dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              style="color: white;"
             >
-            <a class="nav-item nav-link" href="#">About</a>
-            <a class="nav-item nav-link" href="#">Appointment</a>
+              Hi, { User }
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <button class="dropdown-item" type="button" id="profil">
+                <i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;&nbsp;Profil
+              </button>
+              <button class="dropdown-item" type="button">
+                <i class="fa fa-history"></i>&nbsp;&nbsp;&nbsp;Riwayat
+              </button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" type="button" id="logout">
+                <i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Log Out
+              </button>
+            </div>
           </div>
         </div>
       </nav>
 
-      <!-- Form Register -->
-      <div id="alert">
+      <!-- Edit Data Diri Pasien -->
+      <section class="edit-bio-pasien-section" style="margin-bottom: 48px;">
+        <div id="alert">
 
-      </div>
-      <center>
-        <h1 style="margin-top: 48px;">Register</h1>
-      </center>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 offset-md-4">
-            <!-- <form class="col-lg-4 offset-md-4" style="margin-top: 24px;" onsubmit="submit()"> -->
-              <div class="form-group row" style="margin-bottom: 24px;">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Nama Lengkap"
-                  required
-                />
-              </div>
-              <div class="form-group row" style="margin-bottom: 24px;">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="inputEmail3"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-              <div class="form-group row" style="margin-bottom: 24px;">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword3"
-                  placeholder="Password"
-                  required
-                />
-              </div>
-              <div class="form-group row" style="margin-bottom: 24px;">
-                <input id="datepicker" placeholder="Tanggal Lahir" required/>
-                <script>
-                  $('#datepicker').datepicker({
-                    uiLibrary: 'bootstrap4',
-                  });
-                </script>
-              </div>
-              <div class="form-group row">
-                <div class="switch-field" style="margin-bottom: 36px;">
+        </div>
+        <center>
+          <h1 style="margin-top: 48px;">Edit Profil</h1>
+        </center>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div class="col-lg-4 offset-md-4" style="margin-top: 24px;">
+              <!-- <form class="col-lg-4 offset-md-4" style="margin-top: 24px;"> -->
+                <div class="form-group row" style="margin-bottom: 24px;">
                   <input
-                    type="radio"
-                    id="radio-one"
-                    name="gender"
-                    value="Laki-laki"
-                    checked
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Nama Lengkap"
                   />
-                  <label for="radio-one">Laki-laki</label>
-                  <input
-                    type="radio"
-                    id="radio-two"
-                    name="gender"
-                    value="Perempuan"
-                  />
-                  <label for="radio-two">Perempuan</label>
                 </div>
+                <div class="form-group row" style="margin-bottom: 24px;">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-group row" style="margin-bottom: 24px;">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Password"
+                  />
+                </div>
+                <div class="form-group row" style="margin-bottom: 128px;">
+                  <input id="datepicker" placeholder="Tanggal Lahir" />
+                  <script>
+                    $('#datepicker').datepicker({
+                      uiLibrary: 'bootstrap4',
+                    });
+                  </script>
+                </div>
+                <div class="form-group row">
+                  <button
+                    type="submit"
+                    id="btnSubmit"
+                    name="edit_bio_pasien"
+                    class="btn btn-success btn-block"
+                  >
+                    Edit
+                  </button>
+                </div>
+              <!-- </form> -->
               </div>
-              <div class="form-group row">
-                <center>
-                  <p>
-                    Dengan klik Daftar, Anda telah mempercayakan informasi Anda
-                    untuk kami simpan & gunakan. Keamanan data Anda terlindungi
-                    sesuai Syarat & Ketentuan serta Privasi Klinik Tongfang.
-                  </p>
-                </center>
-              </div>
-              <div class="form-group row">
-                <button class="btn btn-success btn-block" id="btnSubmit">
-                  Daftar
-                </button>
-              </div>
-            <!-- </form> -->
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!--footer-main-->
       <footer class="footer-main">

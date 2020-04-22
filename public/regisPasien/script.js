@@ -1,5 +1,4 @@
 document.getElementById("btnSubmit").addEventListener("click", async () => {
-  const baseURL = "http://localhost:3000/api"
   const myData = {}
   myData['nama'] = $('#name').val(),
   myData['gender'] = $("input[name='gender']:checked").val(),
@@ -17,10 +16,21 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
       alert("Registrasi "+ response.message) 
       window.location.href = "/";
     }else{
-      alert(response.message) 
+      alertNav(response.message) 
     }
     
   }).fail(function(response) {
     alert('Error: ' + response.sqlMessage)
   })            
 })
+
+function alertNav(message) {
+  $('#alert').append(`
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>${message}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>`)
+  
+}

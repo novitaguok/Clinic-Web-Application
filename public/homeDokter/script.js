@@ -1,4 +1,4 @@
-$('#username').text('Hi, '+ localStorage.getItem('name'))
+$('#username').text('Hi, Dr. '+ localStorage.getItem('name'))
 
 document.getElementById("logout").addEventListener("click", async () => {
   localStorage.removeItem('Token')

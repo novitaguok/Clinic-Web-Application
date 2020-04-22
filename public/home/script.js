@@ -6,3 +6,8 @@ document.getElementById("logout").addEventListener("click", async () => {
 
   window.location.href = "/";
 })
+
+document.getElementById("profil").addEventListener("click", async () => {
+
+  window.location.href = "/profil";
+})

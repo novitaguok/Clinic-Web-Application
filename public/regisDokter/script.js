@@ -16,10 +16,11 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
     dataType: "json",
   }).done(function(response) {
     if(response.success){
-      alert("Registrasi "+ response.message) 
+      // alert("Registrasi "+ response.message) 
       window.location.href = "/dokter";
     }else{
-      alert(response.message) 
+      alertNav(response.message)
+      window.location.href = "/regisDokter/#alert"
     }
 
   }).fail(function(response) {
@@ -50,3 +51,14 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   // })
   
 })
+
+function alertNav(message) {
+  $('#alert').append(`
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>${message}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>`)
+  
+}
