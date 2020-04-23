@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <title>Klinik Tongfang</title>
 
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    /> -->
+
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -70,15 +76,15 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="/homeDokter">Klinik Tongfang</a>
+          <a class="navbar-brand" href="/home">Klinik Tongfang</a>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="/homeDokter"
+              <a class="nav-link" href="/home"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link" href="/pilihDokter" tabindex="-1" aria-disabled="true"
                 >Appoinment</a
               >
             </li>
@@ -96,14 +102,14 @@
               Hi, { User }
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <button class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="profil">
                 <i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;&nbsp;Profil
               </button>
-              <button class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="riwayat">
                 <i class="fa fa-history"></i>&nbsp;&nbsp;&nbsp;Riwayat
               </button>
               <div class="dropdown-divider"></div>
-              <button id="logout" class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="logout">
                 <i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Log Out
               </button>
             </div>
@@ -112,12 +118,12 @@
       </nav>
 
       <!-- If Empty -->
-      <section id="noData" class="nodata-section" style="height: 80vh;">
+      <section class="nodata-section" id="noData" style="height: 80vh;">
         <div class="container">
           <!-- Stack the columns on mobile by making one full-width and the other half-width -->
           <div class="row">
             <div class="col-6 col-md-5">
-              <img src="../images/nodata.png" style="height: 500px;"/>
+              <img src="../images/nodata.png" style="height: 500px;" />
             </div>
             <div class="col-md-7">
               <h1
@@ -136,10 +142,11 @@
       </section>
 
       <!-- Kalo ada isi -->
-      <section class="customer-list-section" style="margin-top: 30px;">
+      <section class="customer-list-section">
         <div class="container-fluid">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4" id="listPasien">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4" id="listDokter">
             
+              <!-- End a Card -->
           </div>
         </div>
       </section>

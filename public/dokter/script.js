@@ -6,6 +6,7 @@ document.getElementById("btnRegis2").addEventListener("click", async () => {
 })
 
 localStorage.setItem('BASE_URL', window.location.origin + '/api')
+localStorage.setItem('pasien',false)
 
 document.getElementById("btnLogin").addEventListener("click", async () => {
   const myData = {}

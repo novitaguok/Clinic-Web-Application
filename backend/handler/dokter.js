@@ -61,35 +61,19 @@ function login(req,res) {
 
 function update(req,res) {
   const payload = req.body
-  const data = {}
-  if(payload.namaLengkap){
-    data['nama'] = payload.nama
-  }
-  if (payload.gender){
-    data['gender'] = payload.gender
-  }
   const date = payload.tanggal_lahir.split('/')
-  if (payload.tanggal_lahir){
-    data['tanggal_lahir'] = `${date[2]}-${date[0]}-${date[1]}`
+  const data = {
+    nama : payload.nama,
+    tanggal_lahir : `${date[2]}-${date[1]}-${date[0]}`,
+    email : payload.email, 
+    password: payload.password
   }
-  if (payload.bidang){
-    data['bidang'] = payload.bidang
-  }
-  if (payload.pengalaman){
-    data['pengalaman'] = payload.pengalaman
-  }
-  if (payload.email){
-    data['email'] = payload.email
-  }
-  if (payload.password){
-    data['password'] = payload.password
-  }
-  console.log(req.user);
+  // console.log(req.user);
   db('dokter')
   .where('id_dokter', req.user.id_dokter)
   .update(data)
   .then(()=>{
-    res.status(200).json({success: true, data: data, message: 'Update Berhasil!'})
+    res.status(200).json({success: true, data: data, message: 'Berhasil!'})
   })
   .catch(error => {
     console.log(error)

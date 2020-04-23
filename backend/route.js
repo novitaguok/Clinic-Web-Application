@@ -1,6 +1,7 @@
 const express = require('express')
 const user = require('./handler/user')
 const dokter = require('./handler/dokter')
+const medis = require('./handler/rekamMedis')
 const { authenticateToken } = require('../module/auth')
 
 const backend = express.Router()
@@ -18,6 +19,15 @@ backend.post('/dokter/registrasi', dokter.regis)
 backend.post('/dokter/login', dokter.login)
 backend.post('/dokter/update', dokter.update)
 backend.get('/dokter/get/:id', dokter.getData)
-backend.post('/dokter/foto', dokter.foto)
+// backend.post('/dokter/foto', dokter.foto)
+
+//rekam medis
+backend.post('/medis/add', authenticateToken, medis.add)
+backend.post('/medis/update/:id', authenticateToken, medis.update)
+backend.get('/medis/getAll/', authenticateToken, medis.get)
+backend.get('/medis/get/:id', authenticateToken, medis.getOne)
+
+
+
 
 module.exports = backend

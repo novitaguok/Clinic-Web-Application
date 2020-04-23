@@ -8,6 +8,11 @@ document.getElementById("logout").addEventListener("click", async () => {
 })
 
 document.getElementById("profil").addEventListener("click", async () => {
-
   window.location.href = "/profil";
+})
+document.getElementById("pilihDokter").addEventListener("click", async () => {
+  window.location.href = "/pilihDokter";
+})
+document.getElementById("riwayat").addEventListener("click", async () => {
+  window.location.href = "/riwayat";
 })

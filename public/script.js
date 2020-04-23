@@ -4,7 +4,7 @@ document.getElementById("btnRegis").addEventListener("click", async () => {
 document.getElementById("btnRegis2").addEventListener("click", async () => {
   window.location.href = "/regisPasien";
 })
-
+localStorage.setItem('pasien',true)
 localStorage.setItem('BASE_URL', window.location.origin + '/api')
 document.getElementById("btnLogin").addEventListener("click", async () => {
   const myData = {}

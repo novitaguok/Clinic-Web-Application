@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <title>Klinik Tongfang</title>
 
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    /> -->
+    
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -51,8 +57,8 @@
     <link href="style.css" rel="stylesheet" />
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
@@ -70,15 +76,15 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="/homeDokter">Klinik Tongfang</a>
+          <a class="navbar-brand" href="/home">Klinik Tongfang</a>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="/homeDokter"
+              <a class="nav-link" href="/home"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link" href="/pilihDokter" tabindex="-1" aria-disabled="true"
                 >Appoinment</a
               >
             </li>
@@ -103,7 +109,7 @@
                 <i class="fa fa-history"></i>&nbsp;&nbsp;&nbsp;Riwayat
               </button>
               <div class="dropdown-divider"></div>
-              <button id="logout" class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button">
                 <i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Log Out
               </button>
             </div>
@@ -111,35 +117,52 @@
         </div>
       </nav>
 
-      <!-- If Empty -->
-      <section id="noData" class="nodata-section" style="height: 80vh;">
+      <!-- Pasien ke-sekian -->
+      <section class="input-data-medis-section">
         <div class="container">
-          <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-          <div class="row">
-            <div class="col-6 col-md-5">
-              <img src="../images/nodata.png" style="height: 500px;"/>
-            </div>
-            <div class="col-md-7">
-              <h1
-                style="
-                  top: 50%;
-                  position: relative;
-                  color: #f8b955;
-                  text-align: center;
-                "
-              >
-                NO DATA ENTRY
-              </h1>
-            </div>
+          <div class="title">
+            <h1 style="text-align: center; margin-top: 24px;">
+              Form Data Medis
+            </h1>
           </div>
-        </div>
-      </section>
+          <div class="col-sm">
+            <div class="col-lg-4 offset-md-4">
+            <!-- <form
+              class="col-lg-4 offset-md-4"
+              style="margin-top: 24px; margin-bottom: 36px;"
+            > -->
+              <div class="form-group row" style="margin-bottom: 24px;">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tinggi_badan"
+                  placeholder="Tinggi Badan (cm)"
+                />
+              </div>
+              <div class="form-group row" style="margin-bottom: 24px;">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="berat_badan"
+                  placeholder="Berat Badan (kg)"
+                />
+              </div>
 
-      <!-- Kalo ada isi -->
-      <section class="customer-list-section" style="margin-top: 30px;">
-        <div class="container-fluid">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4" id="listPasien">
-            
+              <div class="form-group row" style="margin-bottom: 24px;">
+                <textarea
+                  class="form-control"
+                  id="keluhan"
+                  rows="11"
+                  placeholder="Sampaikan keluhan atau gejala-gejala Anda"
+                ></textarea>
+              </div>
+              <div class="form-group row">
+                <button id="btnSubmit" class="btn btn-success btn-block">
+                  Submit
+                </button>
+              </div>
+            <!-- </form> -->
+            </div>
           </div>
         </div>
       </section>

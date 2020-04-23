@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <title>Klinik Tongfang</title>
 
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    /> -->
+
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -96,14 +102,14 @@
               Hi, { User }
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <button class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="profil">
                 <i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;&nbsp;Profil
               </button>
-              <button class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="riwayat">
                 <i class="fa fa-history"></i>&nbsp;&nbsp;&nbsp;Riwayat
               </button>
               <div class="dropdown-divider"></div>
-              <button id="logout" class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="logout">
                 <i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Log Out
               </button>
             </div>
@@ -111,35 +117,117 @@
         </div>
       </nav>
 
-      <!-- If Empty -->
-      <section id="noData" class="nodata-section" style="height: 80vh;">
+      <!-- Pasien ke-sekian -->
+      <section
+        class="customer-info-section"
+        style="margin-top: 48px; margin-bottom: 48px;"
+      >
         <div class="container">
-          <!-- Stack the columns on mobile by making one full-width and the other half-width -->
           <div class="row">
-            <div class="col-6 col-md-5">
-              <img src="../images/nodata.png" style="height: 500px;"/>
+            <div class="col-4">
+              <div class="profilepic d-flex justify-content-center">
+                <img src="../images/resource/doctor_default_seo.png" />
+              </div>
             </div>
-            <div class="col-md-7">
-              <h1
-                style="
-                  top: 50%;
-                  position: relative;
-                  color: #f8b955;
-                  text-align: center;
-                "
-              >
-                NO DATA ENTRY
-              </h1>
+            <div class="col-8">
+              <div class="info-pasien">
+                <div class="card" style="width: 100%;">
+                  <div class="card-body">
+                    <h5 class="card-title" style="text-align: center;">
+                      Informasi Pasien
+                    </h5>
+                    <div class="dropdown-divider"></div>
+                    <table>
+                      <tr>
+                        <td>Nama Lengkap</td>
+                        <td>
+                          :
+                        </td>
+                        <td id="nama">{ nama pasien }</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>
+                          :
+                        </td>
+                        <td id="email">{ email pasien }</td>
+                      </tr>
+                      <tr>
+                        <td>Tanggal Lahir</td>
+                        <td>
+                          :
+                        </td>
+                        <td id="tanggal_lahir">{ tl pasien }</td>
+                      </tr>
+                      <tr>
+                        <td>Jenis Kelamin</td>
+                        <td>
+                          :
+                        </td>
+                        <td id="gender">{ jk pasien }</td>
+                      </tr>
+                      <tr>
+                        <td>Tinggi Badan</td>
+                        <td>
+                          :
+                        </td>
+                        <td id="tinggi_badan">{ tb pasien }</td>
+                      </tr>
+                      <tr>
+                        <td>Berat Badan</td>
+                        <td>
+                          :
+                        </td>
+                        <td id="berat_badan">{ bb pasien }</td>
+                      </tr>
+                      <tr>
+                        <td>Keluhan</td>
+                        <td>
+                          :
+                        </td>
+                        <td id="keluhan">{ keluhan pasien }</td>
+                      </tr>
+                    </table>
+                    <div class="dropdown-divider"></div>
+                    <textarea
+                      class="form-control"
+                      id="diagnosa"
+                      rows="11"
+                      placeholder="Diagnosa & Solusi"
+                      style="margin-bottom: 24px;"
+                      disabled
+                    ></textarea>
+                    <button
+                      type="button"
+                      id="back"
+                      name="input_diagnose"
+                      class="btn btn-success"
+                      onclick="back()"
+                    >
+                      Back
+                    </button>
+                    <button
+                      type="button"
+                      id="btnSubmit"
+                      name="edit_diagnose"
+                      class="btn btn-warning"
+                      onclick="simpan()"
+                    >
+                      Simpan Diagnosa & Solusi
+                    </button>
+                    <button
+                      type="button"
+                      id="btnHapus"
+                      name="hapus_diagnose"
+                      class="btn btn-danger"
+                      onclick="hapus()"
+                    >
+                      Hapus Rekam Medis
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Kalo ada isi -->
-      <section class="customer-list-section" style="margin-top: 30px;">
-        <div class="container-fluid">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4" id="listPasien">
-            
           </div>
         </div>
       </section>
