@@ -4,7 +4,7 @@ document.getElementById("logout").addEventListener("click", async () => {
   localStorage.removeItem('Token')
   localStorage.removeItem('name')
 
-  window.location.href = "/dokter";
+  window.location.href = "/";
 })
 
 document.getElementById("riwayat").addEventListener("click", async () => {

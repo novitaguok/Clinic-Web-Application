@@ -36,7 +36,7 @@ async function update(req,res) {
       const id = dataMedis.length - 1 
       console.log('masuk')
       const id_medis = dataMedis[id].id_rekam_medis
-      const MyD= {
+      const data= {
         tinggi_badan: payload.tinggi_badan,
         berat_badan: payload.berat_badan,
         keluhan: payload.keluhan

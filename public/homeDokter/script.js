@@ -7,6 +7,10 @@ document.getElementById("logout").addEventListener("click", async () => {
   window.location.href = "/dokter";
 })
 
+document.getElementById("profil").addEventListener("click", async () => {
+  window.location.href = "/profil";
+})
+
 $.ajax({
   headers: {
     'Authorization' : 'Bearer ' + localStorage.getItem('Token')

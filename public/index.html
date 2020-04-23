@@ -46,13 +46,7 @@
       rel="stylesheet"
       type="text/css"
     />
-
-    <!-- Slick Carousel -->
-    <link rel="stylesheet" href="plugins/slick/slick.css" />
-    <link rel="stylesheet" href="plugins/slick/slick-theme.css" />
-    <!-- FancyBox -->
-    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css" />
-
+    
     <!-- Stylesheets -->
     <link href="style.css" rel="stylesheet" />
 
@@ -84,10 +78,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link" onclick="pleaseLogin()" tabindex="-1" aria-disabled="true"
                 >Appoinment</a
               >
             </li>
@@ -174,13 +165,15 @@
           <!-- </form> -->
         </div>
       </nav>
-
       <!-- Carousel  -->
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
         data-ride="carousel"
       >
+        <div id="alert">
+
+        </div>
         <ol class="carousel-indicators">
           <li
             data-target="#carouselExampleIndicators"
@@ -239,7 +232,7 @@
                     <p class="tag-text">
                       Semua pelayanan untuk semua jenis pasien.
                     </p>
-                    <a href="#" class="btn btn-main btn-white">Tentang Kami</a>
+                    <a href="#pelayananTerbaik" class="btn btn-main btn-white">Pelayanan Terbaik Kami</a>
                   </div>
                   <!-- Slide Content End-->
                 </div>
@@ -308,7 +301,7 @@
                 <div class="emmergency item">
                   <i class="fa fa-phone"></i>
                   <h2>Pemanggilan Darurat</h2>
-                  <a href="#">081234567890</a>
+                  <a>081234567890</a>
                   <p>
                     Siap melayani kapanpun.
                   </p>
@@ -341,6 +334,7 @@
       <section
         class="feature-section section"
         style="margin-top: 36px; margin-bottom: 36px;"
+        id="pelayananTerbaik"
       >
         <div class="container">
           <div class="row">
@@ -357,7 +351,7 @@
                     <div class="item">
                       <div class="icon-box">
                         <figure>
-                          <a href="#">
+                          <a>
                             <img
                               src="../images/resource/11.png"
                               alt=""
@@ -378,7 +372,7 @@
                     <div class="item">
                       <div class="icon-box">
                         <figure>
-                          <a href="#">
+                          <a>
                             <img
                               src="../images/resource/22.png"
                               alt=""
@@ -399,7 +393,7 @@
                     <div class="item">
                       <div class="icon-box">
                         <figure>
-                          <a href="#">
+                          <a>
                             <img
                               src="../images/resource/33.png"
                               alt=""
@@ -419,7 +413,7 @@
                     <div class="item">
                       <div class="icon-box">
                         <figure>
-                          <a href="#">
+                          <a>
                             <img
                               src="../images/resource/44.png"
                               alt=""
@@ -754,7 +748,7 @@
                   </div>
                 </form> -->
                 <div class="find-doctor" style="margin-top: 96px;">
-                  <button type="button" class="btn btn-success">
+                  <button type="button" class="btn btn-success" onclick="pleaseLogin()">
                     Cari Dokter!
                   </button>
                 </div>
@@ -797,11 +791,11 @@
                 <ul class="pelayanan" style="list-style: none; color: white;">
                   <li>
                     <i class="fa fa-angle-right"></i>
-                    <a href="#"> Klinik Umum</a>
+                    <a> Klinik Umum</a>
                   </li>
                   <li>
                     <i class="fa fa-angle-right"></i>
-                    <a href="#">Klinik Gigi</a>
+                    <a>Klinik Gigi</a>
                   </li>
                 </ul>
               </div>
@@ -812,14 +806,6 @@
       <!--End footer-main-->
     </div>
     <!--End pagewrapper-->
-
-    <!--Scroll to top-->
-    <div class="scroll-to-top scroll-to-target" data-target=".header-top">
-      <span class="icon fa fa-angle-up"></span>
-    </div>
-
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
 
     <script type="text/javascript" src="script.js"></script>    
   </body>

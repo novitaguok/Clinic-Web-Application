@@ -47,18 +47,12 @@
       type="text/css"
     />
 
-    <!-- Slick Carousel -->
-    <link rel="stylesheet" href="plugins/slick/slick.css" />
-    <link rel="stylesheet" href="plugins/slick/slick-theme.css" />
-    <!-- FancyBox -->
-    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css" />
-
     <!-- Stylesheets -->
     <link href="style.css" rel="stylesheet" />
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/logo.png" type="image/png" />
+    <link rel="icon" href="../images/logo.png" type="image/png" />
   </head>
 
   <body>
@@ -102,14 +96,14 @@
               Hi, { User }
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-              <button class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="profil">
                 <i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;&nbsp;Profil
               </button>
-              <button class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="riwayat">
                 <i class="fa fa-history"></i>&nbsp;&nbsp;&nbsp;Riwayat
               </button>
               <div class="dropdown-divider"></div>
-              <button class="dropdown-item" type="button">
+              <button class="dropdown-item" type="button" id="logout">
                 <i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Log Out
               </button>
             </div>
@@ -200,11 +194,11 @@
                 <ul class="pelayanan" style="list-style: none; color: white;">
                   <li>
                     <i class="fa fa-angle-right"></i>
-                    <a href="#"> Klinik Umum</a>
+                    <a> Klinik Umum</a>
                   </li>
                   <li>
                     <i class="fa fa-angle-right"></i>
-                    <a href="#">Klinik Gigi</a>
+                    <a>Klinik Gigi</a>
                   </li>
                 </ul>
               </div>

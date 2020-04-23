@@ -26,3 +26,18 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
     alert('Error: ' + response.message)
   })            
 })
+
+document.getElementById("logout").addEventListener("click", async () => {
+  localStorage.removeItem('Token')
+  localStorage.removeItem('name')
+
+  window.location.href = "/";
+})
+
+document.getElementById("riwayat").addEventListener("click", async () => {
+  window.location.href = "/riwayat";
+})
+
+document.getElementById("profil").addEventListener("click", async () => {
+  window.location.href = "/profil";
+})

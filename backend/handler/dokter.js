@@ -167,8 +167,23 @@ function getData(req,res) {
       console.log(error)
       res.status(400).json({success: false, message: error})
     })
+  }else{
+    db.from('dokter')
+    .where('id_dokter', req.user.id_dokter)
+    .select()
+    .then(result => {
+      const date = new Date(result[0].tanggal_lahir)
+      const dd = String(date.getDate()).padStart(2, "0")
+      const mm = String(date.getMonth()+1).padStart(2, "0")
+      const yyyy = date.getFullYear()
+      result[0].tanggal_lahir = dd+'/'+mm+'/'+yyyy
+      res.status(200).json({success:true, data: result[0]})
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(400).json({success: false, message: 'error'})
+    })
   }
-    
 }
 
 function foto(req,res) {

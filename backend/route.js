@@ -17,8 +17,8 @@ backend.get('/pasien', authenticateToken, user.getData)
 //dokter
 backend.post('/dokter/registrasi', dokter.regis)
 backend.post('/dokter/login', dokter.login)
-backend.post('/dokter/update', dokter.update)
-backend.get('/dokter/get/:id', dokter.getData)
+backend.post('/dokter/update', authenticateToken, dokter.update)
+backend.get('/dokter/get/:id', authenticateToken, dokter.getData)
 // backend.post('/dokter/foto', dokter.foto)
 
 //rekam medis

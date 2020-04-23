@@ -55,16 +55,13 @@ function login(req,res) {
 
 function update(req,res) {
   const payload = req.body
-  console.log(payload)
   const date = payload.tanggal_lahir.split('/')
-  console.log(date)
   const data = {
     nama : payload.nama,
     tanggal_lahir : `${date[2]}-${date[1]}-${date[0]}`,
     email : payload.email, 
     password: payload.password
   }
-  console.log(data)
   // console.log(req.user);
   db('pasien')
   .where('id_pasien', req.user.id_pasien)
