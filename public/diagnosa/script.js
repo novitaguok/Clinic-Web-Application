@@ -38,7 +38,12 @@ function simpan() {
 }
 
 function back() {
-  window.location.href = '/homeDokter'
+  if(localStorage.getItem('pasien')=='true'){
+    window.location.href = '/riwayat'
+  }else{
+    localStorage.removeItem('pasien')
+    window.location.href = '/homeDokter'
+  }
 }
 function pilih(id) {
   localStorage.setItem('id_rekam_medis', id)
