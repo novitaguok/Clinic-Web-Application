@@ -1,9 +1,11 @@
 
 umum(0)      
-  
 function umum(id) {
   $('#listDokter').empty()
   $.ajax({
+    headers: {
+      'Authorization' : 'Bearer ' + localStorage.getItem('Token')
+    },  
     type: "GET",
     url: localStorage.getItem('BASE_URL')+'/dokter/get/'+id,
     dataType: "json"
@@ -27,7 +29,7 @@ function umum(id) {
               </div>
             </div>
             <center>
-            <a style="color: white;" onclick="pilih(${data.id_dokter})" class="btn btn-success">Pilih Dokter</a>
+            <a style="color: white;" onclick="pilih(${data.id_dokter},'${data.email}')" class="btn btn-success">Pilih Dokter</a>
             </center>
           </div>
         </div>`)
@@ -40,7 +42,8 @@ function umum(id) {
   })        
 }
 
-function pilih(id) {
+function pilih(id,email) {
+  localStorage.setItem('email_dokter',email)
   const myData = {}
   myData['id_dokter'] = Number(id),
   $.ajax({
