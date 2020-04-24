@@ -2,9 +2,10 @@ $('#username').text('Hi, '+ localStorage.getItem('name'))
 
 document.getElementById("btnSubmit").addEventListener("click", async () => {
   const myData = {}
-  myData['tinggi_badan'] = $('#tinggi_badan').val(),
-  myData['berat_badan'] = $('#berat_badan').val(),
-  myData['keluhan'] = $('#keluhan').val(),
+  myData['tinggi_badan'] = $('#tinggi_badan').val()
+  myData['berat_badan'] = $('#berat_badan').val()
+  myData['keluhan'] = $('#keluhan').val()
+  myData['email_dokter'] = localStorage.getItem('email_dokter')
   $.ajax({
     headers: {
       'Authorization' : 'Bearer ' + localStorage.getItem('Token')
@@ -17,6 +18,7 @@ document.getElementById("btnSubmit").addEventListener("click", async () => {
   }).done(function(response) {
     if(response.success){
       alert("Input "+ response.message) 
+      localStorage.removeItem('email_dokter')
       window.location.href = "/home";
     }else{
       alertNav(response.message) 

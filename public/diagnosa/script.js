@@ -21,6 +21,7 @@ function simpan() {
   const myData = {}
   myData['id_rekam_medis'] = localStorage.getItem('id_rekam_medis')
   myData['diagnosa'] = $('#diagnosa').val()
+  myData['email_pasien'] = $('#email').text()
   $.ajax({
     headers: {
       'Authorization' : 'Bearer ' + localStorage.getItem('Token')
@@ -72,4 +73,26 @@ if(localStorage.getItem('pasien')=='true'){
   $('#btnHapus').remove()
 }else{
   $('#username').text('Hi, Dr. '+ localStorage.getItem('name'))
+}
+
+function hapus() {
+  const status = confirm('Takin ')
+  if(status){
+    $.ajax({
+      headers: {
+        'Authorization' : 'Bearer ' + localStorage.getItem('Token')
+      },
+      type: "GET",
+      url: localStorage.getItem('BASE_URL')+'/medis/hapus/'+ localStorage.getItem('id_rekam_medis'),
+      dataType: "json"
+    }).done(function(response) {
+      alert('Hapus '+ response.message)
+      window.location.href = '/homeDokter'
+    }).fail(function(response) {
+      alert('Error: ' + response.message)
+    })
+  }else{
+    alert('Gajadi ehe')
+  }
+  
 }

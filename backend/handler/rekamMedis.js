@@ -1,4 +1,5 @@
 const { db } = require("../../module/db")
+const { sendMail } = require("../../module/mail")
 
 function add(req,res) {
   const data = {
@@ -24,6 +25,7 @@ async function update(req,res) {
       db('rekam_medis').update(myData)
       .where('id_Rekam_medis', Number(payload.id_rekam_medis))
       .then(result => {
+        sendMail(payload.email_pasien,'dokter')
         res.status(200).json({success: true, data: myData, message: 'Berhasil!'})
       })
       .catch(error => {
@@ -45,6 +47,7 @@ async function update(req,res) {
       .update(data)
       .where('id_rekam_medis', id_medis)
       .then(()=>{
+        sendMail(payload.email_dokter,'pasien')
         res.status(200).json({success: true, data: data, message: 'Berhasil!'})
       })
       .catch(error => {
@@ -119,11 +122,30 @@ function getOne(req,res) {
       console.log(result)
       res.status(200).json({success: true, data: result[0], message: 'Berhasil!'})
     })
+    .catch(error => {
+      console.log(error)
+      res.status(400).json({success: false, message: error})
+    })
+}
+
+function hapus(req,res) {
+  db('rekam_medis')
+  .where('id_rekam_medis', req.params.id)
+  .delete()
+  .then(result => {
+    console.log(result)    
+    res.status(200).json({success: true, message: 'Berhasil!'})
+  })
+  .catch(error => {
+    console.log(error)
+    res.status(400).json({success: false, message: error})
+  })
 }
 
 module.exports = {
   add,
   update,
   get,
-  getOne
+  getOne,
+  hapus
 }

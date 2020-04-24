@@ -27,6 +27,7 @@ backend.post('/medis/add', authenticateToken, medis.add)
 backend.post('/medis/update/:id', authenticateToken, medis.update)
 backend.get('/medis/getAll/', authenticateToken, medis.get)
 backend.get('/medis/get/:id', authenticateToken, medis.getOne)
+backend.get('/medis/hapus/:id', authenticateToken, medis.hapus)
 
 
 

@@ -86,7 +86,7 @@ function getData(req,res) {
   if(req.params.id == '0'){
     console.log('all')
     db.from('dokter')
-    .select('id_dokter','nama', 'bidang', 'pengalaman')
+    .select('id_dokter','nama', 'bidang', 'pengalaman','email')
     .then(result => {
       // const date = new Date(result[0].tanggal_lahir)
       // const dd = date.getDate()
@@ -103,7 +103,7 @@ function getData(req,res) {
     console.log('umum')
     db.from('dokter')
     .where('bidang', 'Umum')
-    .select('id_dokter','nama', 'bidang', 'pengalaman')
+    .select('id_dokter','nama', 'bidang', 'pengalaman','email')
     .then(result => {
       // const date = new Date(result[0].tanggal_lahir)
       // const dd = date.getDate()
@@ -120,7 +120,7 @@ function getData(req,res) {
     console.log('gigi')
     db.from('dokter')
     .where('bidang', 'Gigi')
-    .select('id_dokter','nama', 'bidang', 'pengalaman')
+    .select('id_dokter','nama', 'bidang', 'pengalaman','email')
     .then(result => {
       // const date = new Date(result[0].tanggal_lahir)
       // const dd = date.getDate()
@@ -137,7 +137,7 @@ function getData(req,res) {
     console.log('orthopedi')
     db.from('dokter')
     .where('bidang', 'Orthopedi')
-    .select('id_dokter','nama', 'bidang', 'pengalaman')
+    .select('id_dokter','nama', 'bidang', 'pengalaman','email')
     .then(result => {
       // const date = new Date(result[0].tanggal_lahir)
       // const dd = date.getDate()
@@ -154,7 +154,7 @@ function getData(req,res) {
     console.log('gigi')
     db.from('dokter')
     .where('bidang', 'THT')
-    .select('id_dokter','nama', 'bidang', 'pengalaman')
+    .select('id_dokter','nama', 'bidang', 'pengalaman','email')
     .then(result => {
       // const date = new Date(result[0].tanggal_lahir)
       // const dd = date.getDate()
