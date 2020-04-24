@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Klinik Tongfang</title>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script 
+      type="text/javascript" 
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Stylesheets -->
+    <link href="style.css" rel="stylesheet" />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="../images/logo.png" type="image/png" />
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="/dokter">Klinik Tongfang</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="/dokter"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0"> -->
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-outline-light my-2 my-sm-0"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+              style="margin-right: 8px;"
+            >
+              <i class="fa fa-lock"></i> Login
+            </button>
+
+            <!-- Login Modal -->
+            <div
+              class="modal fade"
+              id="exampleModalCenter"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalCenterTitle"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">
+                      Login
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- <form> -->
+                      <div class="form-group">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          aria-describedby="emailHelp"
+                          placeholder="Email"
+                          style="margin-bottom: 24px; width: 100%;"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          placeholder="password"
+                          style="width: 100%;"
+                        />
+                      </div>
+                    <!-- </form> -->
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      id="btnRegis"
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Register
+                    </button>
+                    <button id="btnLogin" type="submit" class="btn btn-success">
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button id="btnRegis2" type="submit" class="btn btn-outline-light my-2 my-sm-0">
+              Register
+            </button>
+          <!-- </form> -->
+        </div>
+      </nav>
+
+      <!-- Carousel  -->
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div
+            class="carousel-item active"
+            style="
+              background-image: url(../images/slider/slider-bg-1.jpg);
+              height: 80vh;
+            "
+          >
+            <div class="overlay"></div>
+            <div class="color-overlay"></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="content style text-center">
+                    <h2
+                      class="text-white text-bold mb-2"
+                      style="margin-top: 160px;"
+                    >
+                      Layanan Konsultasi
+                    </h2>
+                    <p class="tag-text mb-5">
+                      Kami menawarkan konsultasi gratis sebelum pemeriksaan
+                      lebih lanjut.
+                    </p>
+                    <a href="#" class="btn btn-main btn-white">Eksplorasi</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="carousel-item"
+            style="
+              background-image: url(../images/slider/slider-bg-2.jpg);
+              height: 80vh;
+            "
+          >
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <!-- Slide Content Start-->
+                  <div class="content style text-right">
+                    <h2 class="text-white" style="margin-top: 160px;">
+                      Kami Peduli <br />Kesehatan Anda
+                    </h2>
+                    <p class="tag-text">
+                      Semua pelayanan untuk semua jenis pasien.
+                    </p>
+                    <a href="#" class="btn btn-main btn-white">Pelayanan Terbaik Kami</a>
+                  </div>
+                  <!-- Slide Content End-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="carousel-item"
+            style="
+              background-image: url(../images/slider/slider-bg-3.jpg);
+              height: 80vh;
+            "
+          >
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <!-- Slide Content Start -->
+                  <div class="content text-center style">
+                    <h2
+                      class="text-white text-bold mb-2"
+                      style="margin-top: 160px;"
+                    >
+                      Pelayanan Medis Terbaik
+                    </h2>
+                    <p class="tag-text mb-5">
+                      Pelayanan medis kami sudah tidak diragukan hingga ke
+                      tingkat internasional.
+                    </p>
+                    <a href="#" class="btn btn-main btn-white"
+                      >Lihat Testimoni</a
+                    >
+                  </div>
+                  <!-- Slide Content End -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <!--footer-main-->
+      <footer class="footer-main">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="about-widget">
+                  <h1>
+                    Klinik Tongfang
+                  </h1>
+                  <ul class="info" style="list-style: none;">
+                    <li class="item">
+                      <i class="fa fa-map-marker"></i>
+                      <p>Bandung</p>
+                    </li>
+                    <li class="item">
+                      <a href="#">
+                        <i class="fa fa-envelope-o"></i>
+                        <p>tongfang@gmail.com</p>
+                      </a>
+                    </li>
+                    <li class="item">
+                      <i class="fa fa-phone"></i>
+                      <p>081234567890</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <h6>Pelayanan</h6>
+                <ul class="pelayanan" style="list-style: none; color: white;">
+                  <li>
+                    <i class="fa fa-angle-right"></i>
+                    <a> Klinik Umum</a>
+                  </li>
+                  <li>
+                    <i class="fa fa-angle-right"></i>
+                    <a>Klinik Gigi</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--End footer-main-->
+    </div>
+    <!--End pagewrapper-->
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

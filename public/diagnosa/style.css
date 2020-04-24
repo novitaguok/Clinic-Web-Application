@@ -1,0 +1,630 @@
+.page-wrapper {
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 300px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+}
+
+.section-title h3 {
+  font-size: 40px;
+  line-height: 50px;
+  color: #222222;
+  font-weight: 700;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.section-title span {
+  color: #222222;
+  font-weight: 400;
+}
+
+.section-title p {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  color: #777777;
+  font-family: 'Roboto', sans-serif;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.content.style h2 {
+  font-size: 60px;
+}
+
+@media (max-width: 767px) {
+  .content.style h2 {
+    font-size: 30px;
+  }
+}
+
+.content.style .offer-text {
+  letter-spacing: 7px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.content.style .tag-text {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.content.style .btn-main {
+  border-radius: 3px;
+  padding: 16px 50px;
+  font-weight: 700;
+}
+
+.content h2 {
+  font-size: 35px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.content p {
+  font-size: 26px;
+  color: #fff;
+}
+
+.content .btn-white {
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.content .btn-white:hover {
+  background: #fff;
+  color: #000;
+}
+
+.cta {
+  padding: 40px 0;
+  /* position: relative; */
+}
+
+.cta .cta-block {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .cta .cta-block {
+    flex-direction: column;
+  }
+}
+
+.cta .cta-block .emmergency {
+  background: #0f9200;
+}
+
+.cta .cta-block .emmergency a {
+  color: #fff;
+  font-size: 30px;
+}
+
+.cta .cta-block .emmergency p {
+  padding-top: 20px;
+}
+
+.cta .cta-block .top-doctor {
+  background: #30cb00;
+}
+
+.cta .cta-block .top-doctor .btn-main {
+  margin-top: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.cta .cta-block .top-doctor .btn-main:hover {
+  background: #fff;
+  color: #48bdc5;
+}
+
+.cta .cta-block .working-time {
+  background: #4ae54a;
+}
+
+.cta .cta-block .working-time ul {
+  margin: 0;
+  padding: 0;
+}
+
+.cta .cta-block .working-time ul li {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cta .cta-block .working-time ul li span {
+  float: right;
+}
+
+.cta .cta-block .working-time ul li:not(:last-child) {
+  border-bottom: 1px solid #fff;
+}
+
+.cta .cta-block .item {
+  padding: 20px 30px;
+  flex-basis: 33.33%;
+}
+
+.cta .cta-block .item i,
+.cta .cta-block .item h2,
+.cta .cta-block .item p {
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.cta .cta-block .item i {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.cta .cta-block .item h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.cta .cta-block .item p {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.testimonial-section {
+  position: relative;
+  background-size: cover !important;
+  padding: 110px 0px;
+  background-repeat: no-repeat !important;
+}
+
+.testimonial-section:before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(72, 189, 197, 0.7);
+}
+
+.testimonial-section .section-title h3 {
+  position: relative;
+  padding-bottom: 30px;
+  color: #ffffff;
+}
+
+.testimonial-section .section-title h3 span {
+  color: #ffffff;
+}
+
+.testimonial-section .testimonial-carousel .slide-item {
+  outline: 0;
+}
+
+.testimonial-section .testimonial-carousel .slick-dots li button:before {
+  font-size: 15px;
+  color: #fff;
+}
+
+.testimonial-section .inner-box {
+  position: relative;
+  padding: 60px 30px;
+  background: #fff;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-section .inner-box h6 {
+  position: relative;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #000;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.testimonial-section .inner-box p {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.testimonial-section .inner-box .image-box {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.testimonial-section .inner-box .image-box img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.accordion-section .accordion {
+  margin-top: 64px;
+}
+
+.accordion-section .card-header {
+  background-color: #28a745;
+}
+
+.accordion-section .card-header a {
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.accordion-section .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-section .accordion-holder {
+  margin-top: 60px;
+}
+
+.accordion-section .accordion-holder .panel-default {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.accordion-section .accordion-holder .panel-default .panel-heading {
+  background: #fff;
+  padding: 0;
+  border-radius: 0;
+}
+
+.accordion-section .accordion-holder .panel-default .panel-heading h4 {
+  position: relative;
+}
+
+.accordion-section .accordion-holder .panel-default .panel-heading h4 a {
+  font-weight: bold;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  display: block;
+  background: #28a745;
+  color: #fff;
+  padding: 20px 30px;
+  transition: all 0.3s ease;
+}
+
+.accordion-section .accordion-holder .panel-default .panel-heading h4 a:before {
+  content: '\f106';
+  position: absolute;
+  right: 20px;
+  font-family: FontAwesome;
+}
+
+.accordion-section
+  .accordion-holder
+  .panel-default
+  .panel-heading
+  h4
+  a.collapsed {
+  background: #fff;
+  color: #000;
+}
+
+.accordion-section
+  .accordion-holder
+  .panel-default
+  .panel-heading
+  h4
+  a.collapsed:before {
+  content: '\f107';
+  position: absolute;
+  font-family: FontAwesome;
+}
+
+.accordion-section
+  .accordion-holder
+  .panel-default
+  .panel-heading
+  h4
+  a.collapsed:hover {
+  color: #48bdc5;
+}
+
+.accordion-section .accordion-holder .panel-default .panel-body {
+  padding: 20px 30px;
+}
+
+.info-section .card {
+  margin-bottom: 24px;
+}
+
+.info-section .card-header {
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+}
+
+.info-section .card a {
+  margin-bottom: 24px;
+  width: 200px;
+}
+
+.info-section .card .card-body .img-dr {
+  width: 25%;
+  float: left;
+}
+
+.info-section .card .card-body .img-dr img {
+  width: 65px;
+}
+
+.info-section .card .card-body .info-dr {
+  width: 75%;
+  float: right;
+}
+
+.info-section .page1 ul li i {
+  margin-right: 12px;
+  font-size: 13px;
+}
+
+.contact-area {
+  padding-left: 70px;
+}
+
+.contact-area form {
+  margin-top: 60px;
+}
+
+.contact-area .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.contact-area input,
+.contact-area textarea {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  color: #777777;
+  padding: 10px 25px;
+  background: #f4f4f4;
+  display: block;
+  border: 1px solid #ececec;
+}
+
+.contact-area .form-group select {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  height: 50px;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #ececec;
+  background: #f4f4f4 url(../images/icons/icon-select.png) right center
+    no-repeat;
+  cursor: pointer;
+}
+
+.contact-area .form-group option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  height: 50px;
+  padding: 20px;
+}
+
+.contact-area .form-group option:hover {
+  background: #7b64cb;
+}
+
+.contact-area textarea {
+  height: 190px;
+  resize: none;
+}
+
+.contact-area button {
+  width: 100%;
+  height: 50px;
+}
+
+HTML CSSResult * {
+  margin: 0;
+  padding: 0;
+}
+
+.switch-field {
+  display: flex;
+  overflow: hidden;
+}
+
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 2;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+  width: 200px;
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #a5dc86;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+.customer-list-section .card {
+  margin-bottom: 24px;
+}
+
+.customer-list-section .card-header {
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+}
+
+.customer-list-section .card a {
+  margin-bottom: 24px;
+  width: 200px;
+}
+
+.customer-list-section .card .card-body .img-dr {
+  width: 25%;
+  float: left;
+}
+
+.customer-list-section .card .card-body .img-dr img {
+  width: 65px;
+}
+
+.customer-list-section .card .card-body .info-dr {
+  width: 75%;
+  float: right;
+}
+
+.customer-info-section .profilepic img {
+  width: 300px;
+}
+
+.footer-main {
+  position: relative;
+  background-size: cover;
+  z-index: 1;
+  background: #28a745;
+}
+
+.footer-main .footer-top {
+  padding-top: 85px;
+  padding-bottom: 60px;
+}
+
+.footer-main .footer-top .footer-logo {
+  padding-bottom: 20px;
+}
+
+.footer-main .footer-top h1 {
+  line-height: 26px;
+  color: #ffffff;
+}
+
+.footer-main .footer-top p {
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.footer-main .footer-top h6 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #ffffff;
+  padding-bottom: 35px;
+  text-transform: uppercase;
+}
+
+.footer-main .footer-top .info {
+  padding-top: 10px;
+  padding-left: 0;
+}
+
+.footer-main .footer-top .info .item {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+.footer-main .footer-top .info .item i {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.footer-main .footer-top .info .item i:before {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.footer-main .footer-top .pelayanan {
+  padding-left: 0;
+}
+
+.footer-main .footer-top .pelayanan li {
+  padding-bottom: 15px;
+}
+
+.footer-main .footer-top .pelayanan li a {
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.footer-main .footer-top .pelayanan li i {
+  margin-right: 12px;
+  font-size: 13px;
+}
+
+/* Tes */
